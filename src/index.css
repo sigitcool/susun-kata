@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #F4FAFF;
+    color: #1E293B;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes gentle-wiggle {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px) rotate(-2deg); }
+  40% { transform: translateX(6px) rotate(2deg); }
+  60% { transform: translateX(-4px) rotate(-1deg); }
+  80% { transform: translateX(4px) rotate(1deg); }
+}
+
+@keyframes pop-bounce {
+  0% { transform: scale(0.82); }
+  55% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes stroke-draw {
+  from {
+    stroke-dashoffset: 320;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-float {
+  animation: gentle-float 3.4s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: gentle-wiggle 0.42s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.animate-pop-bounce {
+  animation: pop-bounce 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-stroke-draw {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: stroke-draw 1.4s ease-in-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-wiggle,
+  .animate-pop-bounce,
+  .animate-stroke-draw {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "CERDAS CERIA – Dunia Bermain dan Belajar Anak",
+  "description": "Website game edukasi anak usia 3-6 tahun yang interaktif dan ceria untuk belajar huruf, susun kata, angka, hewan, warna, bentuk, dan daya ingat dalam bahasa Indonesia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
